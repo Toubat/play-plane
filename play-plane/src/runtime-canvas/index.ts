@@ -22,7 +22,8 @@ const renderer = createRenderer<Container, Container>({
         (el as Sprite).texture = Texture.from(nextValue);
         break;
       default:
-        throw new Error(`Unknown prop: ${key}`);
+        el[key] = nextValue;
+        break;
     }
   },
   insert(el, parent) {

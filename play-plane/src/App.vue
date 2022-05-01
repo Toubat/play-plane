@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import logo from './assets/logo.png';
+import { reactive } from 'vue';
+import { initGame } from './game';
+import Plane from './components/Plane.vue';
+import Bullet from './components/Bullet.vue';
+
+const { plane, bullets } = initGame(reactive({}), reactive([]));
 </script>
 
 <template>
   <Container>
-    <Sprite :texture="logo"></Sprite>
+    <Plane :plane="plane"></Plane>
+    <Bullet v-for="bullet in bullets" :x="bullet.x" :y="bullet.y"></Bullet>
   </Container>
 </template>
