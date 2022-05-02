@@ -1,4 +1,4 @@
-import Bullet from './Bullet';
+import { Bullet } from './Bullet';
 
 export interface Plane {
   x: number;
@@ -15,7 +15,7 @@ export interface Plane {
 
 const defaultOptions = {
   x: 0,
-  y: 0,
+  y: 300,
   speed: 10,
 };
 
